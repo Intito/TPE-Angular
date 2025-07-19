@@ -6,17 +6,23 @@
             <th>Ingredientes</th>
             <th>Precio</th>
             <th>Stock</th>
+            <th>Cantidad</th>
         </tr>
     </thead>
     <tbody>
         @for (factura of facturas; track factura.name){
             <tr>
-                <td><img [src]="factura.image" [alt]="factura.name" width="200"></td>
+                <td><img class="img-thumbnail" width="250" [src]="factura.image" [alt]="factura.name"></td>
                 <td>{{factura.name | uppercase}}</td>
                 <td>{{factura.ingredients}}</td>
                 <td>{{factura.price | currency}}</td>
                 @if (factura.stock > 0) {
                     <td>{{factura.stock}}</td>
+                    <td> 
+                        <button class="btn btn-primary btn-sm" (click)="downQuantity(factura)">-</button> 
+                            <input type="text" [(ngModel)]="factura.quantity">
+                        <button class="btn btn-primary btn-sm" (click)="upQuantity(factura)">+</button> 
+                    </td>
                 } @else {
                     <td> <span class="badge bg-danger text-dark">SIN STOCK</span> </td>
                 }
