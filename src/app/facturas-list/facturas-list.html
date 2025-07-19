@@ -1,0 +1,30 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>Imagen Ilustrativa</th>
+            <th>Producto</th>
+            <th>Ingredientes</th>
+            <th>Precio</th>
+            <th>Stock</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (factura of facturas; track factura.name){
+            <tr>
+                <td><img [src]="factura.image" [alt]="factura.name" width="200"></td>
+                <td>{{factura.name | uppercase}}</td>
+                <td>{{factura.ingredients}}</td>
+                <td>{{factura.price | currency}}</td>
+                @if (factura.stock > 0) {
+                    <td>{{factura.stock}}</td>
+                } @else {
+                    <td> <span class="badge bg-danger text-dark">SIN STOCK</span> </td>
+                }
+            </tr>
+        } @empty {
+            <tr>
+                <td colspan="4">No hay facturas disponibles.</td>
+            </tr>
+        }
+    </tbody>
+</table>
