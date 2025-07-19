@@ -6,11 +6,17 @@ import { App } from './app';
 import { FacturasList } from './facturas-list/facturas-list';
 
 import { FormsModule } from '@angular/forms';
+import { BoutiqueCSAbout } from './boutique-cs-about/boutique-cs-about';
+import { BoutiqueFacturas } from './boutique-facturas/boutique-facturas';
+import { Cart } from './cart/cart';
 
 @NgModule({
   declarations: [
     App,
-    FacturasList
+    FacturasList,
+    BoutiqueCSAbout,
+    BoutiqueFacturas,
+    Cart
   ],
   imports: [
     BrowserModule,
