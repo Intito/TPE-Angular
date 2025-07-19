@@ -22,6 +22,7 @@
                         <button class="btn btn-primary btn-sm" (click)="downQuantity(factura)">-</button> 
                             <input type="text" [(ngModel)]="factura.quantity">
                         <button class="btn btn-primary btn-sm" (click)="upQuantity(factura)">+</button> 
+                        <button class="btn btn-primary" (click)="addToCart(factura)" >Comprar</button>
                     </td>
                 } @else {
                     <td> <span class="badge bg-danger text-dark">SIN STOCK</span> </td>

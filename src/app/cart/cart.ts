@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { FacturaCart } from '../factura-cart';
+import { Factura } from '../facturas-list/Factura';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-cart',
@@ -8,4 +11,8 @@ import { Component } from '@angular/core';
 })
 export class Cart {
 
+  cartList$!: Observable<Factura[]>;
+  constructor(private cart:FacturaCart){
+    this.cartList$ = cart.cartList.asObservable();
+  }
 }

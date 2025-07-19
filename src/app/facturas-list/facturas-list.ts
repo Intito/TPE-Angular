@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Factura } from './Factura';
+import { FacturaCart } from '../factura-cart';
 
 @Component({
   selector: 'app-facturas-list',
@@ -43,6 +44,9 @@ export class FacturasList {
     }
   ];
 
+  constructor(private cart:FacturaCart){
+  }
+
   upQuantity(factura: Factura): void{
     if(factura.quantity < factura.stock){
       factura.quantity++;
@@ -53,5 +57,11 @@ export class FacturasList {
     if(factura.quantity > 0){
       factura.quantity--;
     }
+  }
+
+  addToCart(factura: Factura): void{
+    this.cart.addToCart(factura);
+    factura.stock -= factura.quantity;
+    factura.quantity = 0;
   }
 }

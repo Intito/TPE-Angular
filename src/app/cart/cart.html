@@ -1,1 +1,6 @@
 <p>Carrito de Compras</p>
+<ul>
+    <li *ngFor = "let factura of cartList$ | async">
+        {{factura.name}}: {{factura.quantity}}
+    </li>
+</ul>
