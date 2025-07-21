@@ -12,7 +12,7 @@ export class FacturasList {
   facturas: Factura[] = [
     {
               name:  "Brownie",
-              ingredients:  "Harina Integral, Manteca, Azucar",
+              ingredients:  "Harina, Manteca",
               price:  1000,
               stock:  8,
               image: "img/brownie.png",
@@ -20,7 +20,7 @@ export class FacturasList {
     },
     {
               name:  "Cheesecake",
-              ingredients:  "Harina Integral, Manteca, Azucar",
+              ingredients:  "Harina Integral, Manteca",
               price:  5000,
               stock:  0,
               image: "img/cheesecake.webp",
@@ -28,7 +28,7 @@ export class FacturasList {
     },
     {
               name:  "Churros",
-              ingredients:  "Harina Integral, Manteca, Azucar",
+              ingredients:  "Harina, Azucar",
               price:  1800,
               stock:  0,
               image: "img/churros.webp",
@@ -36,7 +36,7 @@ export class FacturasList {
     },
     {
               name:  "Pastafrola",
-              ingredients:  "Harina Integral, Manteca, Azucar",
+              ingredients:  "Harina Integral, Manteca",
               price:  6900,
               stock:  4,
               image: "img/Pastafrola.webp",
